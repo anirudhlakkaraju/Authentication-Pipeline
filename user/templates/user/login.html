@@ -1,0 +1,40 @@
+{% extends "user/base.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="{% url 'index' %}" style="font-size:40px; font-family:'Arial', Helvetica, sans-serif"><strong>FakeBook</strong></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <h1 style="text-align: center; font-size:40px; margin-top:110px; margin-bottom:10px">Log In to your Profile</h1>
+
+    {% if message %}
+        <div class="form-group" style="text-align:center;margin-top:15px; font-size:25px; color:#ff1a75">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    <main class="container p-4">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="col-lg-4" style="margin:auto; display:block">
+                <input type="text" name="username" align="right" autocomplete="off" autofocus class="form-control" placeholder="Username" required>
+            </div>
+
+            <div class="col-lg-4" style="margin:auto; display:block">
+                <input type="password" name="password" style="margin-top:15px; margin-bottom:15px" class="form-control" placeholder="Password" required>
+            </div>
+
+            <div class="col-lg-4" style="margin:auto; display:block">
+                <button class="btn btn-primary" style="margin:auto; display:block" type="submit">Log In</button>
+            </div>
+        </form>
+    </main>
+{% endblock %}

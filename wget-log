@@ -1,0 +1,6 @@
+Will not apply HSTS. The HSTS database must be a regular and non-world-writable file.
+ERROR: could not open HSTS store at '/root/.wget-hsts'. HSTS will be disabled.
+--2019-10-15 15:25:19--  https://update.code.visualstudio.com/commit:88f15d17dca836346e787762685a40bb5cce75a8/server-linux-x64/stable
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 104.42.78.153
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|104.42.78.153|:443... connected.
+Unable to establish SSL connection.

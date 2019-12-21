@@ -1,0 +1,48 @@
+{% extends "user/base.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="{% url 'profile' %}" style="font-size:40px; font-family:'Arial', Helvetica, sans-serif"><strong>FakeBook</strong></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav" style="float: right">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'edit' %}">Edit <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        </ul>
+        </div>
+    </nav>
+    <br>
+
+    <h3 style="margin-left:18px">Welcome to your profile page!</h3>
+
+    <br>
+    {% if message %}
+        <div class="form-group row" style="margin-left:18px; font-size:20px; color:#ff1a75">
+            {{ message }}
+        </div>
+    {% endif %}
+    <br>
+
+    <div class="form-group row" style="margin-left:10px">
+        <ul style="list-style-type:none; font-size:20px">
+            <li style="margin-bottom:10px">Name : {{ name }}</li>
+            <li style="margin-bottom:10px">Age : {{ age }}</li>
+            <li style="margin-bottom:10px">Email : {{ email }}</li>
+            <li>College : {{ college }}</li>
+        </ul>
+    </div>
+
+
+{% endblock %}
